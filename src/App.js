@@ -1,23 +1,55 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+import axios from 'axios';
 import './App.css';
 
+
 function App() {
+  const [catFact, setCatFact] = useState([])
+  // const [catImg, setCatImg] = useState(null)
+
+
+  const FACT_BASE_URL = "https://catfact.ninja/fact"
+  // const IMG_BASE_URL = 
+  
+  // put get request in event handeler for button click
+
+  
+
+  
+  function displayCatFact(facts){
+    const catFact = facts.fact
+  
+  }
+    function getCatFact(){
+  
+      axios.get(FACT_BASE_URL)
+      .then((response)=>{
+        setCatFact(response.data)
+        let factApiData = response.data
+        console.log(factApiData)
+      })
+    }
+  
+
+   getCatFact()
+  // useEffect(()=>{
+  //   function getCatFact(){
+  
+  //     axios.get(FACT_BASE_URL)
+  //     .then((response)=>{
+  //       setCatFact(response.data)
+  //       let factApiData = response.data
+  //       console.log(factApiData)
+  //     })
+  //   }
+
+  // },[catFact])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+          <h1>cool cats</h1>
+          <p catFact={catFact} key={factApiData.length}>
+            {catFact}</p>
     </div>
   );
 }
