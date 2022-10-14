@@ -1,55 +1,40 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './App.css';
+import grumpyCat from './grumpycat.jpg'
 
+
+
+// const IMG_BASE_URL = 
 
 function App() {
-  const [catFact, setCatFact] = useState([])
+  
   // const [catImg, setCatImg] = useState(null)
 
-
   const FACT_BASE_URL = "https://catfact.ninja/fact"
-  // const IMG_BASE_URL = 
-  
-  // put get request in event handeler for button click
+  const [catFact, setCatFact] = useState([])
 
-  
+const BtnHandler = () =>{
 
-  
-  function displayCatFact(facts){
-    const catFact = facts.fact
-  
-  }
-    function getCatFact(){
-  
-      axios.get(FACT_BASE_URL)
-      .then((response)=>{
-        setCatFact(response.data)
-        let factApiData = response.data
-        console.log(factApiData)
-      })
-    }
-  
+  axios.get(FACT_BASE_URL)
+  .then((response)=>{
+    setCatFact(response.data.fact)
+    let factApiData = response.data
+    console.log(factApiData)
+  })
+}
 
-   getCatFact()
-  // useEffect(()=>{
-  //   function getCatFact(){
-  
-  //     axios.get(FACT_BASE_URL)
-  //     .then((response)=>{
-  //       setCatFact(response.data)
-  //       let factApiData = response.data
-  //       console.log(factApiData)
-  //     })
-  //   }
 
-  // },[catFact])
-
+useEffect(()=>{
+   BtnHandler()
+},[])
   return (
     <div className="App">
           <h1>cool cats</h1>
-          <p catFact={catFact} key={factApiData.length}>
-            {catFact}</p>
+          <p>{catFact}</p>
+          {/* <image src={grumpyCat} className="cat__image"></image> */}
+          <button onClick={() => BtnHandler()}>Click me for Cats</button>
+  
     </div>
   );
 }
