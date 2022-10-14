@@ -1,16 +1,65 @@
+
 body{
   background-image: url(./components/background-nyan.jpg);
+  
+  
 }
-h1, p{
+.btn{
+  background-color: aquamarine;
+  font-family: 'Yanone';
+  padding: 0.5rem 2rem;
+  margin: 0.5rem;
+  border-radius: 8px;
+}
+.nyan__cursor{
+  height: 50px;
+}
+
+@font-face {
+  font-family: Meows;
+  src: url(./components/meows-font/MeowsNepilRegular-Yzvwa.ttf);
+}
+@font-face {
+  font-family: Yanone;
+  src: url(./components/meows-font/YanoneKaffeesatz-VariableFont_wght.ttf);
+}
+h4{
+  color: black;
+  font-size: 2rem;
+}
+h1, h2{
   color: aliceblue;
+}
+h1{
+  font-size: 5rem;
+  font-family: "Meows";
+  margin: 0;
+  padding: 1.5rem;
+}
+.text__bubble{
+  height: 320px;
+  width: 320px;
+  position: absolute;
+  left: 89rem;
+  bottom: 16rem;
+}
+.text__bubble-text{
+  position: absolute;
+  left: 94.5rem;
+  bottom: 22rem;
+  font-family: 'Yanone';
+  text-align: center;
 }
 #img2 {
   /* animation-direction: alternate-reverse; */
   /* bottom: 15%; */
   position: absolute;
+  height: 300px;
+  width: 300px;
   animation: linear infinite;
   animation-name: run;
   animation-duration: 10s;
+  z-index: 1;
 }
 @keyframes run {
   0% {
@@ -32,18 +81,41 @@ h1, p{
   }
 }
 
+.waving__cats{
+position: absolute;
+left: 73rem;
+bottom: 8rem;
+
+}
+.waving{
+  height: 100px;
+  width: 100px;
+  margin-top: 150px;
+}
+
 .cat__info-box{
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
-  top: 10rem;
-  margin-bottom: 160px;
+  top: 9.5rem;
+  margin-bottom: 140px;
 }
 
+.cat__fact{
+  width: 300px;
+  font-family: 'Yanone';
+}
+/* .rainbow{
+    background-image: linear-gradient(to left, violet, indigo, powderblue, green, yellow, orange, red);   -webkit-background-clip: text;
+    color: transparent;
+} */
 
 .random__cat{
-  width: 300px;
-  height: 300px;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
 }
+
+
 
