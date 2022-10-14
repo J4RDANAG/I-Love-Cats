@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './App.css';
+import './appCat.css';
 
 
 function App() {
@@ -48,12 +49,16 @@ useEffect(()=>{
 
   return (
     <div className="App">
-          <h1>cool cats</h1>
+    <div id="img2"> <img id="img" src="http://orig11.deviantart.net/dcab/f/2011/158/1/6/nyan_cat_by_valcreon-d3iapfh.gif" alt='nyan cat gif'/> </div>
+          
           <div className='cat__info-box'>
+          <h1>cool cats</h1>
           <img src={catImg.url} alt='random cat' className='random__cat'/>
           <p>{catFact}</p>
           <button onClick={() => {BtnHandler() ; CatImgHandler()}}>Click me for Cats</button>
           </div>
+
+          <div id="img1"> <img src="http://orig11.deviantart.net/dcab/f/2011/158/1/6/nyan_cat_by_valcreon-d3iapfh.gif" alt='nyan cat gif'/> </div>
   
     </div>
   );
